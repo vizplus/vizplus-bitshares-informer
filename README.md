@@ -1,4 +1,4 @@
-# vizplus_bitshares_info
+# vizplus-bitshares-info
 
 ## Required libraries
 

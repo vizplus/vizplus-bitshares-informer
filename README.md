@@ -1,6 +1,6 @@
 # vizplus_bitshares_info
 
-## Installation
+## Requires libraries
 
 ### Install with pip3:
 

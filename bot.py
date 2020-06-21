@@ -1,4 +1,5 @@
 import decimal
+from datetime import datetime
 
 from bitshares import BitShares
 from bitshares.instance import set_shared_bitshares_instance
@@ -52,28 +53,28 @@ parser.get_market_depth()
 # получение данных об истории сделок
 parser.get_history_depth()
 # публикация данных в блокчейне VIZ
-json = {
-    'average_bid_price': str(decimal.Decimal(
-        parser.average_bid_price
-    ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))),
-    'average_ask_price': str(decimal.Decimal(
-        parser.average_ask_price
-    ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))),
-    'average_history_price': str(decimal.Decimal(
-        parser.average_history_price
-    ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))), 
-    'quote': parser.sett['quote'],
-    'base': parser.sett['base'],
-    'additional_assets': parser.sett['additional_assets'],
-    'usdt_assets': parser.sett['usdt_assets'],
-    'base_depth': parser.sett['base_depth'],
-    'history_depth': parser.sett['history_depth']
-}
 viz.custom(
     'vizplus_bitshares_info', # ID custom'а 
     [
         'vizplus_bitshares_info', # название типа данных, может отличаться от ID
-        json
+        {
+            'datetime': str(datetime.now()),
+            'average_bid_price': str(decimal.Decimal(
+                parser.average_bid_price
+            ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))),
+            'average_ask_price': str(decimal.Decimal(
+                parser.average_ask_price
+            ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))),
+            'average_history_price': str(decimal.Decimal(
+                parser.average_history_price
+            ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))), 
+            'quote': parser.sett['quote'],
+            'base': parser.sett['base'],
+            'additional_assets': parser.sett['additional_assets'],
+            'usdt_assets': parser.sett['usdt_assets'],
+            'base_depth': parser.sett['base_depth'],
+            'history_depth': parser.sett['history_depth']
+        }
     ], 
     settings['viz_account']['login'], 
     settings['viz_account']['key']

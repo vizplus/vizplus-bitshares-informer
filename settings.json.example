@@ -1,0 +1,16 @@
+{
+ "quote": "XCHNG.VIZ",
+ "base": "GDEX.USDT", 
+ "additional_assets": ["RUDEX.GOLOS", "RUBLE"], 
+ "usdt_assets": ["RUDEX.USDT"], 
+ "base_depth": 100, 
+ "history_depth": 100, 
+ "price_precision": 5, 
+ "orderbook_limit": 50, 
+ "history_limit": 100, 
+ "history_period": 30, 
+ "viz_account": {
+  "login": "...", 
+  "key": "5..."
+ }
+}

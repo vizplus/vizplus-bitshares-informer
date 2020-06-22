@@ -1,4 +1,5 @@
 import decimal
+import json
 from datetime import datetime
 
 from bitshares import BitShares
@@ -9,6 +10,8 @@ from btsParser.Parser import Parser
 # класс для работы с VIZ (от Протея)
 from tvizbase.api import Api
 
+with open('settings.json', 'r') as sett_file:
+    settings = json.load(sett_file)
 decimal.getcontext().rounding = 'ROUND_HALF_UP'
 # подключение к ноде node в сети Bitshares
 BTS = BitShares(
@@ -17,35 +20,6 @@ BTS = BitShares(
 set_shared_bitshares_instance(BTS)
 # подключение к сети VIZ
 viz = Api()
-# Основные настройки скрипта
-# quote - актив, стоимость которого считаем
-# base - актив, в котором считаем стоимость
-# additional_assets - дополнительные рынки для расчета, кроме BTS
-# usdt_assets - дополнительные рынки, стоимость которых равна стоимости
-#   актива base
-# base_depth - глубина расчета цены в стаканах в активе base
-# history_depth - глубина расчета цены совершенных сделок в активе base
-# price_precision - количество знаков после запятой, для отображения цен
-# orderbook_limit - максимальное количество сделок из стакана получаемое от ноды
-# history_limit - максимальное количество сделок получаемое из истории от ноды
-# history_period - максимальное количество дней, за которые берется история
-# viz_account - данные аккаунта для публикации в блокчейне VIZ
-settings = {
-    'quote': 'XCHNG.VIZ',
-    'base': 'GDEX.USDT',
-    'additional_assets': ['RUDEX.GOLOS', 'RUBLE'],
-    'usdt_assets': ['RUDEX.USDT'],
-    'base_depth': 100,
-    'history_depth': 100,
-    'price_precision': 5,
-    'orderbook_limit': 50,
-    'history_limit': 100,
-    'history_period': 30,
-    'viz_account': {
-        'login': '...', 
-        'key': '5...'
-    }
-}
 # инициализация класса
 parser = Parser(settings)
 # получение данных о глубине стаканов

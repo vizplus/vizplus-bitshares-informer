@@ -292,9 +292,12 @@ class Parser():
                         break
                     else:
                         sum -= last_amount
-                    if collections.Counter(last) == collections.Counter(trade):
-                        break_bool = True
-                        break
+                    if (last['quote']['symbol'] == trade['quote']['symbol'] and
+                        last['base']['symbol'] == trade['base']['symbol']):
+                        if (collections.Counter(last) == 
+                                collections.Counter(trade)):
+                            break_bool = True
+                            break
                 if break_bool:
                     break
         sum = sum_quote = 0

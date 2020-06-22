@@ -12,21 +12,8 @@ expiration = 60
 
 
 nodes = [
-		#'wss://testnet.viz.world',
-		#'ws://api.viz.blckchnd.com/ws',
-		#'wss://api.viz.blckchnd.com/ws',
-		
 		'wss://solox.world/ws',
-		#'https://solox.world/',
-		
-		#'wss://ws.viz.ropox.app',
-		#'ws://37.192.123.64:9093',	# not full
-		
-		'wss://viz.lexa.host/ws',
-		#'https://viz.lexa.host/',
-		#'wss://viz.lexa.host/ws',
-		#'seed.viz.lexa.host:2001',
-		#'wss://lexai.host/ws',		old
+		'wss://viz.lexai.host/ws'
 		]
 
 # https://github.com/VIZ-World/viz-world-js/blob/master/src/api/methods.js

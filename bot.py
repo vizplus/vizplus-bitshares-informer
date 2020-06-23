@@ -25,7 +25,7 @@ parser = Parser(settings)
 # получение данных о глубине стаканов
 parser.get_market_depth()
 # получение данных об истории сделок
-parser.get_history_depth()
+#parser.get_history_depth()
 # публикация данных в блокчейне VIZ
 viz.custom(
     'vizplus_bitshares_info', # ID custom'а 
@@ -39,15 +39,15 @@ viz.custom(
             'average_ask_price': str(decimal.Decimal(
                 parser.average_ask_price
             ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))),
-            'average_history_price': str(decimal.Decimal(
-                parser.average_history_price
-            ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))), 
+            #'average_history_price': str(decimal.Decimal(
+            #    parser.average_history_price
+            #).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))), 
             'quote': parser.sett['quote'],
             'base': parser.sett['base'],
             'additional_assets': parser.sett['additional_assets'],
             'usdt_assets': parser.sett['usdt_assets'],
             'base_depth': parser.sett['base_depth'],
-            'history_depth': parser.sett['history_depth']
+            #'history_depth': parser.sett['history_depth']
         }
     ], 
     settings['viz_account']['login'], 

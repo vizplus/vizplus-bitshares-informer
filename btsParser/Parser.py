@@ -307,7 +307,7 @@ class Parser():
         if sum > self.sett['history_depth']:
             last = history.pop()
             ratio = sum / self.sett['history_depth']
-            sum_quote = last['quote']['amount'] / ratio
+            sum_quote = sum_quote / ratio
             sum = self.sett['history_depth']
         self.history_amount = sum_quote
         self.average_history_price = sum / sum_quote

@@ -1,5 +1,6 @@
 import decimal
 import json
+import os
 from datetime import datetime
 
 from bitshares import BitShares
@@ -10,7 +11,7 @@ from btsParser.Parser import Parser
 # класс для работы с VIZ (от Протея)
 from tvizbase.api import Api
 
-with open('settings.json', 'r') as sett_file:
+with open(os.path.dirname(__file__) + '/settings.json', 'r') as sett_file:
     settings = json.load(sett_file)
 decimal.getcontext().rounding = 'ROUND_HALF_UP'
 # подключение к ноде node в сети Bitshares

@@ -1,15 +1,15 @@
 {
- "quote": "XCHNG.VIZ", # основной токен, чей курс считаем
- "base": "GDEX.USDT", # валюта, в которой считаем курс
- "additional_assets": ["RUDEX.GOLOS", "RUBLE", "RUDEX.BTC"], # пары, которые учитываем при подсчёте курса 
- "usdt_assets": ["RUDEX.USDT"], # пары, которые не надо пересчитывать через курс bts, их берём как есть
- "base_depth": 100, # глубина стакана, для которой считаем курс, выражается в base (для нас - доллары)
- "history_depth": 100, # не используется сейчас
- "price_precision": 5, # точность подсчёта курса, количество знаков после запятой
- "orderbook_limit": 50, # максимальное учитываемое количество ордеров для каждой пары 
- "history_limit": 100, # не используется сейчас
- "history_period": 30, # не используется сейчас
- "viz_account": { # данные аккаунта VIZ, в котором публикуется курс
+ "quote": "XCHNG.VIZ",
+ "base": "GDEX.USDT",
+ "additional_assets": ["RUDEX.GOLOS", "RUBLE", "RUDEX.BTC"],  
+ "usdt_assets": ["RUDEX.USDT"], 
+ "base_depth": 100, 
+ "history_depth": 100, 
+ "price_precision": 5, 
+ "orderbook_limit": 50,  
+ "history_limit": 100, 
+ "history_period": 30, 
+ "viz_account": { 
   "login": "...", 
   "key": "5..."
  }

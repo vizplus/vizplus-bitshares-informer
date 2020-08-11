@@ -33,7 +33,7 @@ viz.custom(
     [
         'vizplus_bitshares_info', # название типа данных, может отличаться от ID
         {
-            'datetime': str(datetime.now()),
+            'time_utc': str(datetime.utcnow()),
             'average_bid_price': str(decimal.Decimal(
                 parser.average_bid_price
             ).quantize(decimal.Decimal('1.' + '0'*settings['price_precision']))),

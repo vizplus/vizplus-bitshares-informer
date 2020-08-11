@@ -16,7 +16,7 @@ with open(os.path.dirname(__file__) + '/settings.json', 'r') as sett_file:
 decimal.getcontext().rounding = 'ROUND_HALF_UP'
 # подключение к ноде node в сети Bitshares
 BTS = BitShares(
-    node='wss://citadel.li/node'
+    node=settings['bitshares_node']
 )
 set_shared_bitshares_instance(BTS)
 # подключение к сети VIZ

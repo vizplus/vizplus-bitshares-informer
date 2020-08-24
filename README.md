@@ -2,11 +2,24 @@
 
 ## Required libraries
 
-### Install with pip3:
+### Installing:
 
-    $ sudo apt-get install libffi-dev libssl-dev python-dev python3-dev python3-pip
-    $ pip3 install bitshares
+    $ git clone https://github.com/vizplus/vizplus-bitshares-info
+    $ cd vizplus-bitshares-info
+    $ sudo apt-get install libffi-dev libssl-dev python-dev python3-dev python3-pip python3-venv
     $ pip3 install --upgrade requests
+    $ python3 -m venv venv
+    $ . venv/bin/activate
+    $ pip3 install bitshares
+    $ deactivate
+    
+### Using:
+
+    $ mv settings.json.example settings.json
+    
+Edit file settings.json and run script:
+
+    $ venv/bin/python ./bot.py
 
 ### Значения параметров в settings
 

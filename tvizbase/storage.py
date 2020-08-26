@@ -12,7 +12,7 @@ expiration = 60
 
 
 nodes = [
-		'wss://solox.world/ws',
+		'wss://node.viz.media/ws',
 		'wss://viz.lexai.host/ws'
 		]
 
